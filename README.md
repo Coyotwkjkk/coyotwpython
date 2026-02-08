@@ -16,6 +16,7 @@ Durante o desenvolvimento foram praticados conceitos como:
 - Uso de enumerate
 - Entrada de dados com input
 - Organização do código com função principal (main)
+- Try/Except
 
 Nenhum codigo foi copiado, foi tudo estudo pessoal e ideais que fui tendo para que num futuro eu me aprofunde mais.
 Sei que é simples, mas fiz sozinho e estudando bastante, no pouco tempo que tenho diario. Pretendo atualizar aqui sempre,
