@@ -7,23 +7,30 @@ def add_peoples(lista):
     print(f"Nome: {name} / Data: {data}.")
     print("Usuario adcionado com sucesso!")
 
-def remove_people(identify):
+def remove_people(agenda):
     leitura = len(agenda)
 
     if leitura == 0:
         print("A lista está vázia.")
 
-    elif leitura >= 1:
-
+    else:
         for position, (name, data) in enumerate(agenda, start= 1):
             print(f"{position} - Name: {name} / Data: {data}")
 
-        remove_this = int(input("\nQuem você deseja remover? \nDigite o número: "))
-        
-        agenda.pop((remove_this - 1))
+        try:
 
-    else: 
-        print("Opção invalida!")
+            remove_this = int(input("\nQuem você deseja remover? \nDigite o número: "))
+
+            if remove_this < 1 or remove_this > leitura:
+                print("Nenhum usuario nesta posição da lista.")
+
+            else:
+
+                agenda.pop((remove_this - 1))
+                print("Usuario removido com sucesso!")
+
+        except:
+            print("Valor de entrada invalido!")
 
 def listar_pessoas():
     contagem = len(agenda)
@@ -49,21 +56,25 @@ def main():
         print("3 - Listar pessoas")
         print("4 - Sair")
 
-        op = input("Escolha um numero: ")
+        try:
 
-        if op == "1":
-            add_peoples(agenda)
+            op = int(input("Escolha um numero: "))
 
-        elif op == "2":
-            remove_people(agenda)
+            if op == 1:
+                add_peoples(agenda)
 
-        elif op == "3":
-            listar_pessoas()
+            elif op == 2:
+                remove_people(agenda)
 
-        elif op == "4":
-            print("Saindo...")
-            break
+            elif op == 3:
+                listar_pessoas()
 
-        else:
-            print("Opção invalida!")
+            elif op == 4:
+                print("Saindo...")
+                break
+
+            else:
+                print("Opção invalida!")
+        except:
+            print("Valor de entrada invalido!")
 main()
